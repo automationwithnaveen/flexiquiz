@@ -11,7 +11,6 @@ public class BaseScript
 	@BeforeMethod
 	public void openBrowser()
 	{
-		System.out.println("I am Before Test");
 		driver = new ChromeDriver();
 	    driver.get("https://www.flexiquiz.com/");
 	    driver.manage().window().maximize();
@@ -21,7 +20,8 @@ public class BaseScript
 	@AfterTest
 	public void quitBrowser() throws Exception
 	{
-		Thread.sleep(3000);
+		Thread.sleep(5000);
+//		/Syste
 		driver.quit();
 	}
 }
