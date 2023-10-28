@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseScript 
 {
-	WebDriver driver;
+	public WebDriver driver;
 	@BeforeMethod
 	public void openBrowser()
 	{
@@ -16,12 +16,27 @@ public class BaseScript
 	    driver.manage().window().maximize();
 	}
 	
+	public void goBack()
+	{
+		driver.navigate().back();
+	}
+	
+	
+	public void goForward()
+	{
+		driver.navigate().forward();
+	}
+	
+	
+	public void navigateTo(String URL)
+	{
+		driver.navigate().to(URL);
+	}
 	
 	@AfterTest
 	public void quitBrowser() throws Exception
 	{
 		Thread.sleep(5000);
-//		/Syste
 		driver.quit();
 	}
 }
